@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conectar con TikTok — Datos Curiosos Shorts</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 640px; margin: 4rem auto; padding: 0 1.5rem; line-height: 1.6; color: #222; }
+  a { color: #0a58ca; }
+  .btn { display: inline-block; margin-top: 1rem; padding: .8rem 1.4rem; background: #fe2c55; color: #fff; border-radius: 6px; text-decoration: none; font-weight: 600; }
+  li { margin-bottom: .4rem; }
+</style>
+</head>
+<body>
+  <h1>Conectar con TikTok</h1>
+  <p>"Datos Curiosos Shorts" publica en la cuenta de TikTok de su autor los videos cortos de
+  curiosidades que genera el proyecto.</p>
+  <p>Al conectar, TikTok te pedirá autorizar estos permisos:</p>
+  <ul>
+    <li><b>user.info.basic</b>: confirmar qué cuenta está conectada (nombre y foto de perfil).</li>
+    <li><b>video.publish</b>: publicar en esa cuenta los videos generados, con su título y hashtags.</li>
+  </ul>
+  <a class="btn" id="conectar" href="#">Conectar con TikTok</a>
+  <p style="margin-top:2rem"><a href="terminos.html">Términos</a> · <a href="privacidad.html">Privacidad</a></p>
+<script>
+  const params = new URLSearchParams({
+    client_key: "sbawgwnxy422pm4q03",
+    scope: "user.info.basic,video.publish",
+    response_type: "code",
+    redirect_uri: "https://jgfrv1914-ui.github.io/tiktok-callback.html",
+    state: crypto.randomUUID()
+  });
+  document.getElementById("conectar").href = "https://www.tiktok.com/v2/auth/authorize/?" + params;
+</script>
+</body>
+</html>
