@@ -28,7 +28,8 @@
     scope: "user.info.basic,video.publish",
     response_type: "code",
     redirect_uri: "https://jgfrv1914-ui.github.io/tiktok-callback.html",
-    state: crypto.randomUUID()
+    state: crypto.randomUUID(),
+    disable_auto_auth: "1"
   });
   document.getElementById("conectar").href = "https://www.tiktok.com/v2/auth/authorize/?" + params;
 </script>
